@@ -1,0 +1,54 @@
+﻿
+
+<div class="row">
+    <div class="col-sm-3">
+        <div ng-class="Movy.RatingComp.ReviewPercentage > 50 && 'text-success' || 'text-danger'">
+            <div class="jumbotron">
+                <h1>{{Movy.RatingComp.ReviewPercentage}}% <span ng-class="Movy.RatingComp.ReviewPercentage > 50 && 'glyphicon glyphicon-thumbs-up' || 'glyphicon glyphicon-thumbs-down'"></span></h1>
+                <div>
+                    Average Score: {{Movy.RatingComp.AverageRatings}}/10
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="col-sm-9">
+
+        <h1>{{Movy.MovyName}}</h1>
+        <p>Director: {{Movy.Director}}, Studio: {{Movy.Studio}}</p>
+        <p>Synopsis:{{Movy.Synopsis}}</p>
+
+    </div>
+
+</div>
+
+
+
+
+<div>
+    <h2>Reviews({{Movy.RatingComp.ReviewCount}})</h2>
+
+
+    <div ng-repeat="Review in Movy.Reviews">
+        <blockquote>
+            <p>
+                {{Review.Synopsis}}
+                <br />
+                <small>
+                    <a href="{{Review.ReviewUrl}}" target="_blank">Read More...</a>
+                </small>
+                
+            </p>
+            <p  ng-class="Review.IsFavorable && 'glyphicon glyphicon-thumbs-up text-success' || 'glyphicon glyphicon-thumbs-down text-danger'">
+            
+            <span>{{Review.ReviewRating}}</span> 
+            </p>
+
+
+            <footer>{{Review.CriticName}}, {{Review.Publication}}</footer>
+        </blockquote>
+    </div>
+
+
+
+</div>

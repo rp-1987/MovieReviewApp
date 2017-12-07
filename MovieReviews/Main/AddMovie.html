@@ -1,0 +1,95 @@
+﻿<div class="form-horizontal" role="form">
+    <h2>Add Movie</h2>
+    <div class="form-group">
+        <label for="movieName" class="col-sm-3 control-label">Movie Name</label>
+        <div class="col-sm-6">
+            <input type="text" id="movieName" placeholder="Movie Name" ng-model="movie.MovieName" class="form-control" autofocus>
+            <span class="help-block">Last Name, First Name, eg.: Smith, Harry</span>
+        </div>
+    </div>
+    <div class="form-group">
+        <label for="email" class="col-sm-3 control-label">Release Date</label>
+        <div class="col-sm-6">
+            <input id="releaseDate" readonly placeholder="Release Date" ng-model="movie.ReleaseDate" class="form-control">
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label class="control-label col-sm-3">CBFC Rating</label>
+        <div class="col-sm-6">
+            <div class="row">
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" id="uRating" name="rating" ng-model="movie.Rating" value="U">U(Universal)
+                    </label>
+                </div>
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" id="uaRating" name="rating" ng-model="movie.Rating" value="UA">UA(Under Parental Guidance)
+                    </label>
+                </div>
+                <div class="col-sm-4">
+                    <label class="radio-inline">
+                        <input type="radio" id="aRating" name="rating" ng-model="movie.Rating" value="A">A(Adults only)
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="director" class="col-sm-3 control-label">Director</label>
+        <div class="col-sm-6">
+            <input type="text" id="director" placeholder="Director" ng-model="movie.Director" class="form-control" autofocus>
+            
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="studio" class="col-sm-3 control-label">Studio</label>
+        <div class="col-sm-6">
+            <input type="text" id="studio" placeholder="Studio" ng-model="movie.Studio" class="form-control" autofocus>
+
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="synopsis" class="col-sm-3 control-label">Synopsis</label>
+        <div class="col-sm-6">
+            <textarea type="text" id="synopsis" placeholder="Synopsis" ng-model="movie.Synopsis" class="form-control" />
+
+        </div>
+    </div>
+  
+    <div class="form-group">
+        <div class="col-sm-6 col-sm-offset-3">
+            <button class="btn btn-primary btn-block" ng-click="Add()">Add Movie</button>
+        </div>
+    </div>
+
+    <div ng-class="AlertClass" ng-show="ShowAlert">
+        {{Message}}
+    </div>
+
+</div> 
+
+
+<script>
+    $(document).ready(function () {
+        //var releaseDatePick;
+        $('#uRating').prop('checked', true);
+        $(function () {
+            $('input[id="releaseDate"]').daterangepicker({
+                singleDatePicker: true,
+                minDate: moment().subtract('1', 'year').calendar(),
+                maxDate: moment(),
+                startDate: moment(),                                
+            },
+            function (start, end, label) {
+                
+                console.log(start.format('DD/MM/YYYY'));
+            }
+            );
+        });
+    });
+</script>

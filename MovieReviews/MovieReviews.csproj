@@ -1,0 +1,412 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{EAA953B5-799E-4039-9D53-9A31B1664D9D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MovieReviews</RootNamespace>
+    <AssemblyName>MovieReviews</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.6.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.2.3\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.2.3\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.2.3\lib\net45\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\EntityFramework.dll" />
+    <Content Include="bin\EntityFramework.SqlServer.dll" />
+    <Content Include="bin\Newtonsoft.Json.dll" />
+    <Content Include="bin\System.Net.Http.Formatting.dll" />
+    <Content Include="bin\System.Web.Helpers.dll" />
+    <Content Include="bin\System.Web.Http.dll" />
+    <Content Include="bin\System.Web.Http.WebHost.dll" />
+    <Content Include="bin\System.Web.Mvc.dll" />
+    <Content Include="bin\System.Web.Razor.dll" />
+    <Content Include="bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="bin\System.Web.Webpages.dll" />
+    <Content Include="bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Site.css" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Global.asax" />
+    <Content Include="Main\AddMovie.html" />
+    <Content Include="Main\AddReview.html" />
+    <Content Include="Main\Default.html" />
+    <Content Include="Main\MovieDetails.html" />
+    <Content Include="node_modules\angular-mocks\angular-mocks.js" />
+    <Content Include="node_modules\angular-mocks\ngAnimateMock.js" />
+    <Content Include="node_modules\angular-mocks\ngMock.js" />
+    <Content Include="node_modules\angular-mocks\ngMockE2E.js" />
+    <Content Include="node_modules\jasmine-core\images\jasmine-horizontal.png" />
+    <Content Include="node_modules\jasmine-core\images\jasmine-horizontal.svg" />
+    <Content Include="node_modules\jasmine-core\images\jasmine_favicon.png" />
+    <Content Include="node_modules\jasmine-core\jasmine_core.egg-info\dependency_links.txt" />
+    <Content Include="node_modules\jasmine-core\jasmine_core.egg-info\requires.txt" />
+    <Content Include="node_modules\jasmine-core\jasmine_core.egg-info\SOURCES.txt" />
+    <Content Include="node_modules\jasmine-core\jasmine_core.egg-info\top_level.txt" />
+    <Content Include="node_modules\jasmine-core\lib\console\console.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\boot.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\node_example\lib\jasmine_examples\Player.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\node_example\lib\jasmine_examples\Song.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\node_example\spec\helpers\jasmine_examples\SpecHelper.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\node_example\spec\jasmine_examples\PlayerSpec.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\spec\PlayerSpec.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\spec\SpecHelper.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\src\Player.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\example\src\Song.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\jasmine-html.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\jasmine.css" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\jasmine.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\json2.js" />
+    <Content Include="node_modules\jasmine-core\lib\jasmine-core\node_boot.js" />
+    <Content Include="node_modules\jasmine-core\requirements.txt" />
+    <Content Include="obj\Debug\MovieReviews.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\MovieReviews.csproj.FileListAbsolute.txt" />
+    <Content Include="obj\Release\MovieReviews.dll" />
+    <Content Include="obj\Release\MovieReviews.pdb" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\EntityFramework.SqlServer.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\MovieReviews.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\MovieReviews.Domain.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\Newtonsoft.Json.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Net.Http.Formatting.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Helpers.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Http.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Http.WebHost.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Mvc.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Razor.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Webpages.Deployment.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Webpages.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\bin\System.Web.Webpages.Razor.dll" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\bootstrap.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Content\Site.css" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="obj\Release\Package\PackageTmp\Global.asax" />
+    <Content Include="obj\Release\Package\PackageTmp\Main\AddMovie.html" />
+    <Content Include="obj\Release\Package\PackageTmp\Main\AddReview.html" />
+    <Content Include="obj\Release\Package\PackageTmp\Main\Default.html" />
+    <Content Include="obj\Release\Package\PackageTmp\Main\MovieDetails.html" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\angular.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\angular.route.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\app.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\bootstrap.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\controllers\MovieCrudController.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\controllers\MovieDetailsController.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\controllers\MovieReviewController.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\controllers\ReviewCrudController.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\DateRangePicker\daterangepicker.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\DateRangePicker\moment.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\highcharts.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.10.2.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.10.2.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\modernizr-2.6.2.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\services\MovieService.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\star-rating.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\app.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.cerulean.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.cosmo.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.flatly.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.lumen.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.paper.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.sandstone.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.simplex.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.spacelab.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\bootstrap.united.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\DateRangePicker\daterangepicker.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\font.awesome.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\star-rating.css" />
+    <Content Include="obj\Release\Package\PackageTmp\Styles\star-rating.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-fa\theme.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-fa\theme.js" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-fa\theme.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-fa\theme.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-svg\theme.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-svg\theme.js" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-svg\theme.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-svg\theme.min.js" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-uni\theme.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-uni\theme.js" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-uni\theme.min.css" />
+    <Content Include="obj\Release\Package\PackageTmp\themes\krajee-uni\theme.min.js" />
+    <Content Include="obj\Release\_WPPLastBuildInfo.txt" />
+    <Content Include="Scripts\angular-mocks.js" />
+    <Content Include="Scripts\angular.min.js" />
+    <Content Include="Scripts\angular.route.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\controllers\MovieCrudController.js" />
+    <Content Include="Scripts\controllers\MovieDetailsController.js" />
+    <Content Include="Scripts\controllers\MovieReviewController.js" />
+    <Content Include="Scripts\controllers\ReviewCrudController.js" />
+    <Content Include="Scripts\controllers\testController.js" />
+    <Content Include="Scripts\DateRangePicker\daterangepicker.js" />
+    <Content Include="Scripts\DateRangePicker\moment.min.js" />
+    <Content Include="Scripts\highcharts.js" />
+    <Content Include="fonts\Roboto-Bold.ttf" />
+    <Content Include="fonts\Roboto-BoldItalic.ttf" />
+    <Content Include="fonts\Roboto-Italic.ttf" />
+    <Content Include="fonts\Roboto-Regular.ttf" />
+    <Content Include="fonts\Roboto-Thin.ttf" />
+    <Content Include="node_modules\angular-mocks\bower.json" />
+    <Content Include="node_modules\angular-mocks\LICENSE.md" />
+    <Content Include="node_modules\angular-mocks\package.json" />
+    <Content Include="node_modules\angular-mocks\README.md" />
+    <Content Include="node_modules\jasmine-core\.codeclimate.yml" />
+    <Content Include="node_modules\jasmine-core\.editorconfig" />
+    <Content Include="node_modules\jasmine-core\.github\CONTRIBUTING.md" />
+    <Content Include="node_modules\jasmine-core\.github\ISSUE_TEMPLATE.md" />
+    <Content Include="node_modules\jasmine-core\.npmignore" />
+    <Content Include="node_modules\jasmine-core\bower.json" />
+    <Content Include="node_modules\jasmine-core\jasmine_core.egg-info\PKG-INFO" />
+    <Content Include="node_modules\jasmine-core\MANIFEST.in" />
+    <Content Include="node_modules\jasmine-core\MIT.LICENSE" />
+    <Content Include="node_modules\jasmine-core\package.json" />
+    <Content Include="node_modules\jasmine-core\README.md" />
+    <Content Include="node_modules\jasmine-core\RELEASE.md" />
+    <Content Include="obj\Debug\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Release\DesignTimeResolveAssemblyReferencesInput.cache" />
+    <Content Include="obj\Release\MovieReviews.csprojResolveAssemblyReference.cache" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\Roboto-Bold.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\Roboto-BoldItalic.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\Roboto-Italic.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\Roboto-Regular.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\fonts\Roboto-Thin.ttf" />
+    <Content Include="obj\Release\Package\PackageTmp\packages.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Scripts\jquery-1.10.2.min.map" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Home\Index.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\Shared\_Layout.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\web.config" />
+    <Content Include="obj\Release\Package\PackageTmp\Views\_ViewStart.cshtml" />
+    <Content Include="obj\Release\Package\PackageTmp\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\assist\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\original\Web.config" />
+    <Content Include="obj\Release\TransformWebConfig\transformed\Web.config" />
+    <None Include="Properties\PublishProfiles\MovieReview.pubxml" />
+    <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="Scripts\jquery-1.10.2.js" />
+    <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.min.js" />
+    <Content Include="Scripts\app.js" />
+    <Content Include="Scripts\modernizr-2.6.2.js" />
+    <Content Include="Scripts\services\MovieService.js" />
+    <Content Include="Scripts\star-rating.min.js" />
+    <Content Include="Scripts\tests\app.tests.js" />
+    <Content Include="Scripts\tests\MovieReviewController.tests.js" />
+    <Content Include="Scripts\tests\movieservice.tests.js" />
+    <Content Include="Styles\app.css" />
+    <Content Include="Styles\bootstrap.cerulean.css" />
+    <Content Include="Styles\bootstrap.cosmo.css" />
+    <Content Include="Styles\bootstrap.flatly.css" />
+    <Content Include="Styles\bootstrap.lumen.css" />
+    <Content Include="Styles\bootstrap.min.css" />
+    <Content Include="Styles\bootstrap.paper.css" />
+    <Content Include="Styles\bootstrap.sandstone.css" />
+    <Content Include="Styles\bootstrap.simplex.css" />
+    <Content Include="Styles\bootstrap.spacelab.css" />
+    <Content Include="Styles\bootstrap.united.css" />
+    <Content Include="Styles\DateRangePicker\daterangepicker.css" />
+    <Content Include="Styles\font.awesome.css" />
+    <Content Include="Styles\star-rating.css" />
+    <Content Include="Styles\star-rating.min.css" />
+    <Content Include="themes\krajee-fa\theme.css" />
+    <Content Include="themes\krajee-fa\theme.js" />
+    <Content Include="themes\krajee-fa\theme.min.css" />
+    <Content Include="themes\krajee-fa\theme.min.js" />
+    <Content Include="themes\krajee-svg\theme.css" />
+    <Content Include="themes\krajee-svg\theme.js" />
+    <Content Include="themes\krajee-svg\theme.min.css" />
+    <Content Include="themes\krajee-svg\theme.min.js" />
+    <Content Include="themes\krajee-uni\theme.css" />
+    <Content Include="themes\krajee-uni\theme.js" />
+    <Content Include="themes\krajee-uni\theme.min.css" />
+    <Content Include="themes\krajee-uni\theme.min.js" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\CriticController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
+    <Compile Include="Controllers\MovieReviewController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Models\CriticsSelectListViewModel.cs" />
+    <Compile Include="Models\MoviesCollectionViewModel.cs" />
+    <Compile Include="Models\MoviesSelectListViewModel.cs" />
+    <Compile Include="Models\MoviesViewModel.cs" />
+    <Compile Include="Models\MovieViewModelOperations.cs" />
+    <Compile Include="Models\ReviewViewModel.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Debug\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_036C0B5B-1481-4323-8D20-8F5ADCB23D92.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_5937a670-0e60-4077-877b-f7221da3dda1.cs" />
+    <Compile Include="obj\Release\TemporaryGeneratedFile_E7A71F73-0F8D-4B9B-B56E-8E70B10BC5D3.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="packages.config" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff2" />
+    <Content Include="Views\_ViewStart.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Scripts\jquery-1.10.2.min.map" />
+    <Content Include="Views\Home\TestRunner.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="obj\Debug\TempPE\" />
+    <Folder Include="obj\Release\ProfileTransformWebConfig\transformed\Views\" />
+    <Folder Include="obj\Release\TempPE\" />
+    <Folder Include="obj\Release\TransformWebConfig\transformed\Views\" />
+    <Folder Include="Views\Critic\" />
+    <Folder Include="Views\MovieReview\" />
+    <Folder Include="Views\Movie\" />
+    <Folder Include="Views\Review\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>2423</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:2423/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

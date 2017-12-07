@@ -1,0 +1,38 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+    <link href="~/Styles/bootstrap.min.css" rel="stylesheet" />
+    <link href="~/Styles/app.css" rel="stylesheet" />
+    <link href="~/Styles/DateRangePicker/daterangepicker.css" rel="stylesheet" />
+    <link href="~/Styles/star-rating.min.css" rel="stylesheet" />
+    <link href="~/Styles/font.awesome.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery.min.js"></script>
+    <script src="~/Scripts/bootstrap.min.js"></script>
+    <script src="~/Scripts/angular.min.js"></script>
+    <script src="~/Scripts/angular.route.min.js"></script>
+    <script src="~/Scripts/DateRangePicker/moment.min.js"></script>
+    <script src="~/Scripts/DateRangePicker/daterangepicker.js"></script>    
+    <script src="~/Scripts/star-rating.min.js"></script>
+    <script src="~/Scripts/app.js"></script>
+    <script src="~/Scripts/services/MovieService.js"></script>
+    <script src="~/Scripts/controllers/MovieReviewController.js"></script>
+    <script src="~/Scripts/controllers/MovieDetailsController.js"></script>
+    <script src="~/Scripts/controllers/MovieCrudController.js"></script>
+    <script src="~/Scripts/controllers/ReviewCrudController.js"></script>
+    
+</head>
+<body ng-app="reviewApp">
+  
+    <div class="container-fluid" ng-view>
+
+    </div>
+</body>
+</html>
