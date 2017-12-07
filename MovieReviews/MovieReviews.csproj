@@ -377,6 +377,12 @@
     <Folder Include="Views\Movie\" />
     <Folder Include="Views\Review\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MovieReviews.Domain\MovieReviews.Domain.csproj">
+      <Project>{d7dcd129-d404-4bd9-bfff-fd9a7183e95d}</Project>
+      <Name>MovieReviews.Domain</Name>
+    </ProjectReference>
+  </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
