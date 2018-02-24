@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReviews", "MovieReview
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReviews.Domain", "MovieReviews.Domain\MovieReviews.Domain.csproj", "{D7DCD129-D404-4BD9-BFFF-FD9A7183E95D}"
 EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MovieReviews.Data", "MovieReviews.Data\MovieReviews.Data.sqlproj", "{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,12 @@ Global
 		{D7DCD129-D404-4BD9-BFFF-FD9A7183E95D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D7DCD129-D404-4BD9-BFFF-FD9A7183E95D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D7DCD129-D404-4BD9-BFFF-FD9A7183E95D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Release|Any CPU.Deploy.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
