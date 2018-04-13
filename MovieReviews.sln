@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReviews.Domain", "Movi
 EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "MovieReviews.Data", "MovieReviews.Data\MovieReviews.Data.sqlproj", "{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReviews.AdminUI", "MovieReviews.AdminUI\MovieReviews.AdminUI.csproj", "{A58C9368-C58B-4419-AECD-FF8CBE1BF710}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieReviews.Service", "MovieReviews.Service\MovieReviews.Service.csproj", "{1DB4286C-ECFA-412A-AC51-5E8DCDA8F567}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -29,6 +33,14 @@ Global
 		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8C998FAA-3CA3-4A66-B28B-4EA8BD40B213}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{A58C9368-C58B-4419-AECD-FF8CBE1BF710}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A58C9368-C58B-4419-AECD-FF8CBE1BF710}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A58C9368-C58B-4419-AECD-FF8CBE1BF710}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A58C9368-C58B-4419-AECD-FF8CBE1BF710}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1DB4286C-ECFA-412A-AC51-5E8DCDA8F567}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1DB4286C-ECFA-412A-AC51-5E8DCDA8F567}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1DB4286C-ECFA-412A-AC51-5E8DCDA8F567}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1DB4286C-ECFA-412A-AC51-5E8DCDA8F567}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

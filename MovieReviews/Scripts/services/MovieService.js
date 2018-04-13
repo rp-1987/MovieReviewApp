@@ -1,14 +1,14 @@
 ﻿(function () {
     var movieService = function ($http) {
         var movies = function () {
-            return $http.post(baseUrl + "Home/GetMovies")
+            return $http.get(baseUrl + "Landing")
                         .then(function (serviceResponse) {
                             return serviceResponse.data;
                         });
         };
 
         var movy = function (movieId) {
-            return $http.post(baseUrl + "Home/GetMovy?Id=" + movieId)
+            return $http.get(baseUrl + "landing/" + movieId)
                         .then(function (serviceResponse) {
                             return serviceResponse.data;
                         });
@@ -17,7 +17,7 @@
         var addMovie = function (movieObj) {
             return $http({
                 method: 'POST',
-                url: baseUrl + 'Movie/AddMovie',
+                url: baseUrl + 'movie',
                 data: movieObj
             }).then(function (serviceResponse) {
                 return serviceResponse.data;
@@ -27,7 +27,7 @@
         var addReview = function (reviewObj) {
             return $http({
                 method: 'POST',
-                url: baseUrl + 'MovieReview/AddReview',
+                url: baseUrl + 'review',
                 data: reviewObj
             }).then(function (serviceResponse) {
                 return serviceResponse.data;
@@ -36,14 +36,14 @@
         
 
         var getMovieList = function () {
-            return $http.post(baseUrl + "Movie/GetAllMovies")
+            return $http.get(baseUrl + "movie")
                         .then(function (serviceResponse) {
                             return serviceResponse.data;
                         });
         };
 
         var getCriticsList = function () {
-            return $http.post(baseUrl + "Critic/GetAllCritics")
+            return $http.get(baseUrl + "critic")
                         .then(function (serviceResponse) {
                             return serviceResponse.data;
                         });

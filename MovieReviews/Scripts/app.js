@@ -1,4 +1,5 @@
-﻿var baseUrl = "http://localhost:2423/";
+﻿//var baseUrl = "http://localhost:2423/";
+var baseUrl = "http://localhost:52934/api/";
 var app = angular.module("reviewApp", ["ngRoute"]);
 
 app.config(function ($routeProvider) {

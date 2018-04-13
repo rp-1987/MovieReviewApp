@@ -1,0 +1,42 @@
+﻿@model MovieReviews.AdminUI.Critic
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Critic</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.CriticName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.CriticName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Publication)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Publication)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsTopCritic)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsTopCritic)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

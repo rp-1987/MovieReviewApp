@@ -1,0 +1,74 @@
+﻿@model MovieReviews.AdminUI.MovieReview
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>MovieReview</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewSynopsis)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewSynopsis)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.IsGood)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IsGood)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewRatingNum)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewRatingNum)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewRatingDen)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewRatingDen)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.ReviewUrl)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ReviewUrl)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Critic.CriticName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Critic.CriticName)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Movy.MovieName)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Movy.MovieName)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

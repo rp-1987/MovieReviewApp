@@ -1,8 +1,9 @@
 ﻿using System;
+using System.Collections.Generic;
 namespace MovieReviews.Domain.Repositories
 {
     public interface ICriticsRepository
     {
-        System.Collections.Generic.IEnumerable<MovieReviews.Domain.Entities.Critic> GetAllCritics();
+        IEnumerable<MovieReviews.Domain.Entities.Critic> GetAllCritics();
     }
 }
