@@ -38,12 +38,10 @@ namespace MovieReviews.Service.Controllers
             {
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
                 var allMovies = adaptor.movieRepository.GetAllMovies();
-                var movieList = from m in allMovies.AsEnumerable()
-                                select new
-                                {
-                                    MovieId = m.Id,
-                                    MovieName = m.MovieName
-                                };
+                
+                var movieList = allMovies
+                                          .OrderByDescending(x => x.ReleaseDate)
+                                          .Select(movie => new { MovieId = movie.Id, MovieName = movie.MovieName });
                 return Ok(movieList);
             }
             catch (Exception ex)
