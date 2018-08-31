@@ -14,20 +14,7 @@ namespace MovieReviews.Service.Controllers
     [EnableCors("*", "*", "*")]
     public class ReviewController : ApiController
     {
-        //public IHttpActionResult Get(int id)
-        //{
-        //    try
-        //    {
-        //        RepositoryAdaptor adaptor = new RepositoryAdaptor();
-        //        var movieReviews = adaptor.reviewsRepository.GetReviewsByMovie(id);
-        //        return Ok(movieReviews);
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //        return InternalServerError(ex);
-        //    }
-        //}
+        
 
         public IHttpActionResult Post(Object obj)
         {
