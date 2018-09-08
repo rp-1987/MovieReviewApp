@@ -1,9 +1,13 @@
-﻿using System;
+﻿using MovieReviews.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace MovieReviews.Domain.Repositories
 {
     public interface IReviewsRepository
     {
-        string AddMovieReview(MovieReviews.Domain.Entities.MovieReview review);
-        System.Collections.Generic.IEnumerable<MovieReviews.Domain.Entities.MovieReview> GetReviewsByMovie(int movieId);
+        Task<string> AddMovieReview(MovieReview review);
+        Task<List<MovieReview>> GetReviewsByMovie(int movieId);
     }
 }

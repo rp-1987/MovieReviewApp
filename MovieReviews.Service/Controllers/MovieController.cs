@@ -8,20 +8,21 @@ using MovieReviews.Domain;
 using MovieReviews.Domain.Entities;
 using Newtonsoft.Json;
 using System.Web.Http.Cors;
+using System.Threading.Tasks;
 
 namespace MovieReviews.Service.Controllers
 {
     [EnableCors("*", "*", "*")]
     public class MovieController : ApiController
     {
-        public IHttpActionResult Post(Object obj)
+        public async Task<IHttpActionResult> Post(Object obj)
         {
             try
             {
                 var jsonString = obj.ToString();
                 Movy movie = JsonConvert.DeserializeObject<Movy>(jsonString);
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var message = adaptor.movieRepository.AddMovie(movie);
+                var message = await adaptor.movieRepository.AddMovie(movie);
                 return Ok(new { Message = message });
             }
             catch (Exception ex)
@@ -32,12 +33,12 @@ namespace MovieReviews.Service.Controllers
 
         }
 
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
             try
             {
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var allMovies = adaptor.movieRepository.GetAllMovies();
+                var allMovies = await adaptor.movieRepository.GetAllMovies();
                 
                 var movieList = allMovies
                                           .OrderByDescending(x => x.ReleaseDate)

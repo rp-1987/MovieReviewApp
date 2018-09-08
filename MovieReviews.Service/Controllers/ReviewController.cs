@@ -8,6 +8,7 @@ using MovieReviews.Domain;
 using MovieReviews.Domain.Entities;
 using Newtonsoft.Json;
 using System.Web.Http.Cors;
+using System.Threading.Tasks;
 
 namespace MovieReviews.Service.Controllers
 {
@@ -16,14 +17,14 @@ namespace MovieReviews.Service.Controllers
     {
         
 
-        public IHttpActionResult Post(Object obj)
+        public async Task<IHttpActionResult> Post(Object obj)
         {
             try
             {
                 var jsonString = obj.ToString();
                 MovieReview review = JsonConvert.DeserializeObject<MovieReview>(jsonString); 
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var message = adaptor.reviewsRepository.AddMovieReview(review);
+                var message = await adaptor.reviewsRepository.AddMovieReview(review);
                 return Ok(new { Message = message });
             }
             catch (Exception ex)

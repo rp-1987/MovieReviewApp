@@ -1,37 +1,37 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using MovieReviews.Domain.Entities;
 
 namespace MovieReviews.Domain.Repositories
 {
-    public class MovieRepository : MovieReviews.Domain.Repositories.IMovieRepository
+    public class MovieRepository : IMovieRepository
     {
         MovieReviewContext context = new MovieReviewContext();
 
-        public IEnumerable<Movy> GetAllMovies()
+        public async Task<List<Movy>> GetAllMovies()
         {
-            return context.Movies.AsEnumerable();
+            return await context.Movies.ToListAsync();
         }
 
-        public IEnumerable<Movy> GetAllMoviesWithReviews()
+        public async Task<List<Movy>> GetAllMoviesWithReviews()
         {
-            return context.Movies.Where(x=> x.MovieReviews.Count() > 0).AsEnumerable();
+            return await context.Movies.Where(x=> x.MovieReviews.Count() > 0).ToListAsync();
         }
 
-        public Movy GetMovie(int id)
+        public async Task<Movy> GetMovie(int id)
         {
-            return context.Movies.Where(x => x.Id == id).FirstOrDefault();
+            return await context.Movies.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
 
-        public string AddMovie(Movy movie)
+        public async Task<string> AddMovie(Movy movie)
         {
             if (context.Movies.Where(m => m.MovieName == movie.MovieName).Count() == 0)
             {
                 context.Movies.Add(movie);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
                 return "Added Successfully!";
             }
             return "Movie Already exists!";

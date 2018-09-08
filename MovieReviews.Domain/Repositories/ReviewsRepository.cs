@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -8,21 +9,21 @@ using MovieReviews.Domain.Entities;
 
 namespace MovieReviews.Domain.Repositories
 {
-    public class ReviewsRepository : MovieReviews.Domain.Repositories.IReviewsRepository
+    public class ReviewsRepository : IReviewsRepository
     {
         private MovieReviewContext context = new MovieReviewContext();
 
-        public IEnumerable<MovieReview> GetReviewsByMovie(int movieId)
+        public async Task<List<MovieReview>> GetReviewsByMovie(int movieId)
         {
-            return context.MovieReviews.Where(x => x.MovieId == movieId).AsEnumerable();
+            return await context.MovieReviews.Where(x => x.MovieId == movieId).ToListAsync();
         }
 
-        public string AddMovieReview(MovieReview review)
+        public async Task<string> AddMovieReview(MovieReview review)
         {
-            if (context.MovieReviews.Where(mr => mr.MovieId == review.MovieId && mr.CriticId == review.CriticId).Count() == 0)
+            if (await context.MovieReviews.Where(mr => mr.MovieId == review.MovieId && mr.CriticId == review.CriticId).CountAsync() == 0)
             {
                 context.MovieReviews.Add(review);
-                context.SaveChanges();
+                await context.SaveChangesAsync();
                 return "Added Successfully!";
             }
             return "Review Already exists!";

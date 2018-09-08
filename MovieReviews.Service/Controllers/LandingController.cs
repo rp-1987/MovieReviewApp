@@ -6,18 +6,21 @@ using System.Net.Http;
 using System.Web.Http;
 using MovieReviews.Domain;
 using System.Web.Http.Cors;
+using System.Threading.Tasks;
 
 namespace MovieReviews.Service.Controllers
 {
     [EnableCors("*", "*", "*")]
     public class LandingController : ApiController
     {
-        public IHttpActionResult Get()
+        public async Task<IHttpActionResult> Get()
         {
             try
             {
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var movies = adaptor.movieRepository.GetAllMoviesWithReviews();
+                var movies = await adaptor.movieRepository.GetAllMoviesWithReviews();
+                
+
                 var moviesDto = from m in movies
                                 select new
                                 {
@@ -39,23 +42,23 @@ namespace MovieReviews.Service.Controllers
             }
         }
 
-        public IHttpActionResult Get(int id)
+        public async Task<IHttpActionResult> Get(int id)
         {
             try
             {
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var movy = adaptor.movieRepository.GetMovie(id);
-                var reviews = adaptor.reviewsRepository.GetReviewsByMovie(id);
-                var reviewsDto = from r in reviews
-                                 select new
-                                 {
-                                     CriticName = r.Critic.CriticName,
-                                     Publication = r.Critic.Publication,
-                                     ReviewUrl = r.ReviewUrl,
-                                     ReviewRating = r.ReviewRatingNum.ToString() + "/" + r.ReviewRatingDen.ToString(),
-                                     IsFavorable = r.IsGood,
-                                     Synopsis = r.ReviewSynopsis
-                                 };
+                var movy = await adaptor.movieRepository.GetMovie(id);
+                var reviews = await adaptor.reviewsRepository.GetReviewsByMovie(id);
+                var reviewsDto = (from r in reviews
+                                  select new
+                                  {
+                                      CriticName = r.Critic.CriticName,
+                                      Publication = r.Critic.Publication,
+                                      ReviewUrl = r.ReviewUrl,
+                                      ReviewRating = r.ReviewRatingNum.ToString() + "/" + r.ReviewRatingDen.ToString(),
+                                      IsFavorable = r.IsGood,
+                                      Synopsis = r.ReviewSynopsis
+                                  }).ToList();
                 var movyDto = 
                               new
                               {

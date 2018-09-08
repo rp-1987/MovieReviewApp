@@ -17,11 +17,10 @@
 	
 	
 	
-	
 	</appSettings>
   <connectionStrings>
-    
-    <add name="MovieReviewContext" connectionString="Data Source=ROHITP\SQLEXPRESS;Initial Catalog=MovieReview_dev;Integrated Security=False;User ID=sa;Password=mosl_123;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient"/>
+    <add name="MovieCriticModel" connectionString="Data Source=ROHITP\SQLEXPRESS;Initial Catalog=MovieReview;Integrated Security=False;User ID=sa;Password=mosl_123;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient"/>
+    <add name="MovieReviewContext" connectionString="Data Source=ROHITP\SQLEXPRESS;Initial Catalog=MovieReview;Integrated Security=False;User ID=sa;Password=mosl_123;Connect Timeout=15;Encrypt=False;TrustServerCertificate=False; MultipleActiveResultSets=True;" providerName="System.Data.SqlClient"/>
   </connectionStrings>
   <system.web>
     <compilation debug="true" targetFramework="4.5.2" assemblyPostProcessorType="Microsoft.VisualStudio.Enterprise.Common.AspPerformanceInstrumenter, Microsoft.VisualStudio.Enterprise.AspNetHelper, Version=15.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a"/>

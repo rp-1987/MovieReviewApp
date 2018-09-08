@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace MovieReviews.Domain.Repositories.SQLRepository
 {
-    public class MoviesSQLRepository: IMovieRepository
+    public class MoviesSQLRepository
     {
         public string AddMovie(Entities.Movy movie)
         {

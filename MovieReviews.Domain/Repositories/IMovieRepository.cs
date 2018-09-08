@@ -1,12 +1,16 @@
-﻿using System;
+﻿using MovieReviews.Domain.Entities;
+using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace MovieReviews.Domain.Repositories
 {
     public interface IMovieRepository
     {
-        string AddMovie(MovieReviews.Domain.Entities.Movy movie);
-        System.Collections.Generic.IEnumerable<MovieReviews.Domain.Entities.Movy> GetAllMovies();
-        System.Collections.Generic.IEnumerable<MovieReviews.Domain.Entities.Movy> GetAllMoviesWithReviews();
-        MovieReviews.Domain.Entities.Movy GetMovie(int id);
-        MovieReviews.Domain.Entities.RatingComp GetRating(int movieid);
+        Task<string> AddMovie(Movy movie);
+        Task<List<Movy>> GetAllMovies();
+        Task<List<Movy>> GetAllMoviesWithReviews();
+        Task<Movy> GetMovie(int id);
+        RatingComp GetRating(int movieid);
     }
 }

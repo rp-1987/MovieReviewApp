@@ -1,9 +1,12 @@
-﻿using System;
+﻿using MovieReviews.Domain.Entities;
+using System;
 using System.Collections.Generic;
+using System.Threading.Tasks;
+
 namespace MovieReviews.Domain.Repositories
 {
     public interface ICriticsRepository
     {
-        IEnumerable<MovieReviews.Domain.Entities.Critic> GetAllCritics();
+        Task<List<Critic>> GetAllCritics();
     }
 }

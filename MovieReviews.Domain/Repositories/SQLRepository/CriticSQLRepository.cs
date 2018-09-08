@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace MovieReviews.Domain.Repositories.SQLRepository
 {
-    public class CriticSQLRepository: ICriticsRepository
+    public class CriticSQLRepository
     {
         public IEnumerable<Entities.Critic> GetAllCritics()
         {

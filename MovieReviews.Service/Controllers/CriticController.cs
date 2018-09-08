@@ -6,6 +6,7 @@ using System.Net.Http;
 using System.Web.Http;
 using MovieReviews.Domain;
 using System.Web.Http.Cors;
+using System.Threading.Tasks;
 
 namespace MovieReviews.Service.Controllers
 {
@@ -13,13 +14,13 @@ namespace MovieReviews.Service.Controllers
     public class CriticController : ApiController
     {
 
-        public IHttpActionResult GetCritics()
+        public async Task<IHttpActionResult> GetCritics()
         {
             try
             {
                 RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var allCritics = adaptor.criticsRepository.GetAllCritics();
-                var criticsSelectList = from c in allCritics.AsEnumerable()
+                var allCritics = await adaptor.criticsRepository.GetAllCritics();
+                var criticsSelectList = from c in allCritics
                                         select new
                                         {
                                             CriticId = c.Id,
