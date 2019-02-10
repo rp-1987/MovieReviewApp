@@ -7,18 +7,27 @@ using System.Web.Http;
 using MovieReviews.Domain;
 using System.Web.Http.Cors;
 using System.Threading.Tasks;
+using MovieReviews.Domain.Repositories;
 
 namespace MovieReviews.Service.Controllers
 {
     [EnableCors("*", "*", "*")]
     public class LandingController : ApiController
     {
+        private IMovieRepository movieRepository;
+        private IReviewsRepository reviewRepository;
+
+        public LandingController(IMovieRepository movieRepo, IReviewsRepository reviewRepo)
+        {
+            movieRepository = movieRepo;
+            reviewRepository = reviewRepo;
+        }
+
         public async Task<IHttpActionResult> Get()
         {
             try
-            {
-                RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var movies = await adaptor.movieRepository.GetAllMoviesWithReviews();
+            {                
+                var movies = await movieRepository.GetAllMoviesWithReviews();
                 
 
                 var moviesDto = from m in movies
@@ -31,7 +40,7 @@ namespace MovieReviews.Service.Controllers
                                     Director = m.Director,
                                     Studio = m.Studio,
                                     Synopsis = m.Synopsis,
-                                    RatingComp = adaptor.movieRepository.GetRating(m.Id)
+                                    RatingComp = movieRepository.GetRating(m.Id)
                                 };
                 return Ok(moviesDto);
             }
@@ -45,10 +54,9 @@ namespace MovieReviews.Service.Controllers
         public async Task<IHttpActionResult> Get(int id)
         {
             try
-            {
-                RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var movy = await adaptor.movieRepository.GetMovie(id);
-                var reviews = await adaptor.reviewsRepository.GetReviewsByMovie(id);
+            {                
+                var movy = await movieRepository.GetMovie(id);
+                var reviews = await reviewRepository.GetReviewsByMovie(id);
                 var reviewsDto = (from r in reviews
                                   select new
                                   {
@@ -70,7 +78,7 @@ namespace MovieReviews.Service.Controllers
                                   Studio = movy.Studio,
                                   Synopsis = movy.Synopsis,
                                   Reviews = reviewsDto,
-                                  RatingComp = adaptor.movieRepository.GetRating(movy.Id)
+                                  RatingComp = movieRepository.GetRating(movy.Id)
                               };
                 return Ok(movyDto);
             }

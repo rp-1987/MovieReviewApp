@@ -67,7 +67,6 @@
     <Compile Include="Repositories\ReviewsRepository.cs" />
     <Compile Include="Repositories\SQLRepository\CriticSQLRepository.cs" />
     <Compile Include="Repositories\SQLRepository\MoviesSQLRepository.cs" />
-    <Compile Include="RepositoryAdaptor.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

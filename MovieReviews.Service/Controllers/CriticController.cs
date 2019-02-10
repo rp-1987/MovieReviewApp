@@ -7,19 +7,25 @@ using System.Web.Http;
 using MovieReviews.Domain;
 using System.Web.Http.Cors;
 using System.Threading.Tasks;
+using MovieReviews.Domain.Repositories;
 
 namespace MovieReviews.Service.Controllers
 {
     [EnableCors("*","*","*")]
     public class CriticController : ApiController
     {
+        private ICriticsRepository repo;
+        
+        public CriticController(ICriticsRepository _repo)
+        {
+            repo = _repo;
+        }
 
         public async Task<IHttpActionResult> GetCritics()
         {
             try
-            {
-                RepositoryAdaptor adaptor = new RepositoryAdaptor();
-                var allCritics = await adaptor.criticsRepository.GetAllCritics();
+            {                
+                var allCritics = await repo.GetAllCritics();
                 var criticsSelectList = from c in allCritics
                                         select new
                                         {
